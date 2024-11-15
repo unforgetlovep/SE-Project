@@ -8,5 +8,6 @@ int main() {
 >>>>>>> 2bc8725 (fetch-first)
 	cout << "hello SZTU"<<endl;
 	cout << "hello BDI" << endl;
-
+// zhy commit
+	cout << "hello zhy" << endl
 }
