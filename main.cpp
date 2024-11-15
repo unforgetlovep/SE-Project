@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 int main() {
-
-	cout << "hello SZTU";
+	cout << "hello world" << endl;
+	cout << "hello SZTU"<<endl;
 
 
 }
