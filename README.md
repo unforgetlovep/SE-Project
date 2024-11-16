@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cloud-study
 
 ## Project setup
@@ -22,3 +23,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# SE-Project
+软件工程大作业
+>>>>>>> 72403527e20d96d88a5c004e94ad34cd6377b428
