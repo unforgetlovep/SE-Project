@@ -44,14 +44,29 @@
     </nav>
     <main>
         <div class="wrap main-area">
-            <div class="recommend-box">
-                <ul>
-                    <li>推荐课程</li>
-                    <li>推荐老师</li>
-                </ul>
+            <div>
+                <div class="recommend-box">
+                    <ul>
+                        <li>推荐课程</li>
+                        <li>推荐老师</li>
+                    </ul>
+                </div>
+                <el-carousel height="360px">
+                    <el-carousel-item v-for="item in images" :key="item">
+                        <img :src="item" alt="轮播图{{item}}" style="width: 776px; height: 360px;" />
+                    </el-carousel-item>
+                </el-carousel>
             </div>
+            <!--轮播图和导航-->
+            
+            
+            <!--推荐主区域-->
+            <div>
 
+            </div>
         </div>
+
+
     </main>
     <footer>
 
@@ -60,6 +75,14 @@
 
 <script setup>
 import { ArrowDown } from '@element-plus/icons-vue';
+import { ElCarousel, ElCarouselItem } from 'element-plus';
+import { ref } from 'vue';
+
+const images = ref([
+    '/images/lunbo1.png',
+    '/images/lunbo2.png',
+    '/images/lunbo3.png',
+])
 </script>
 
 <style scoped>
@@ -167,5 +190,21 @@ footer {
     height: 250px;
     width: 100px;
     text-align: center
+}
+
+
+.recommend-box {
+  display: flex;
+  margin-top: 20px;
+}
+
+.recommend-box ul {
+  display: flex;
+}
+
+.recommend-box li {
+  margin-right: 20px;
+  font-size: 18px;
+  cursor: pointer;
 }
 </style>
