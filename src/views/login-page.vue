@@ -2,7 +2,7 @@
     <div class="page-container">
         <Header/>
         <div class="content">
-            <Register/>
+            <Login/>
         </div>
         <Footer/>
     </div>
@@ -11,7 +11,7 @@
 <script setup>
 import Header from '@/components/Index/head-nav.vue';
 import Footer from '@/components/Index/index-footer.vue';
-import Register from '@/components/Account/register-content.vue';
+import Login from '@/components/Account/login-content.vue';
 </script>
 
 <style scoped>
@@ -26,7 +26,7 @@ import Register from '@/components/Account/register-content.vue';
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/public/bg-pic/c5.jpg'); /* 替换为实际的背景图路径 */
+    background-image: url('/public/bg-pic/library.jpg'); /* 替换为实际的背景图路径 */
     background-size: cover; /* 确保背景图覆盖整个容器 */
     background-position: center; /* 背景图居中 */
 }

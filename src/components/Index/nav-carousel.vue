@@ -25,7 +25,9 @@
             <p class="short-txt">您可在本网站免费学习</p>
             <el-avatar size="large" src='https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
                 class="avatar"></el-avatar>
-            <el-button type="success">登录或注册</el-button>
+            <router-link to="/register">
+                <el-button type="success">登录或注册</el-button>
+            </router-link>
         </div>
     </div>
 </template>

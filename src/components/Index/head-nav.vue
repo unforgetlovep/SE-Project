@@ -34,7 +34,7 @@
                 </ul>
             </div>
             <div class="login-box">
-                <a href="">登录</a>
+                <router-link to="/login">登录</router-link>
                 <span style="margin: 0 5px;">|</span>
                 <router-link to="/register">注册</router-link>
             </div>
