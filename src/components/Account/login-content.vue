@@ -25,8 +25,10 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { ElMessage } from 'element-plus';
 import { loginUser } from '@/api/user'; // 导入登录 API
+import { useUserStore } from '@/stores/user'; // 导入 Pinia Store
 
 const router = useRouter();
+const userStore = useUserStore();
 const formRef = ref(null);
 const form = ref({
     email: '',
@@ -59,7 +61,9 @@ const onSubmit = () => {
         if (valid) {
             // 发送登录请求到后端
             loginUser(form.value)
-                .then(() => {
+                .then(response => {
+                    console.log(response);
+                    userStore.login(response.data.user); // 更新 Pinia Store 中的登录状态
                     ElMessage.success('登录成功！');
                     router.push('/'); // 登录成功后跳转到首页
                 })

@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import Header from '@/components/Index/head-nav.vue';
+import Header from '@/components/Index/index-header.vue';
 import Footer from '@/components/Index/index-footer.vue';
 import Register from '@/components/Account/register-content.vue';
 </script>

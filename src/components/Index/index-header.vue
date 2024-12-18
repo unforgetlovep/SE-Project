@@ -8,35 +8,29 @@
             <div class="head-nav ">
                 <ul class="container">
                     <li>
-                        <el-dropdown>
-                            <span class="el-dropdown-link">
-                                相关课程
-                                <el-icon class="el-icon--right">
-                                    <arrow-down />
-                                </el-icon>
-                            </span>
-                            <template #dropdown>
-                                <el-dropdown-menu>
-                                    <el-dropdown-item>计算机科学与技术</el-dropdown-item>
-                                    <el-dropdown-item>人工智能</el-dropdown-item>
-                                    <el-dropdown-item>大数据科学</el-dropdown-item>
-                                    <el-dropdown-item disabled>敬请期待</el-dropdown-item>
-                                </el-dropdown-menu>
-                            </template>
-                        </el-dropdown>
+                        <router-link to="/">首页</router-link>
                     </li>
                     <li>
-                        <a href="">教务系统</a>
+                        <a href="https://auth.sztu.edu.cn/idp/authcenter/ActionAuthChain?entityId=jiaowu">教务系统</a>
                     </li>
                     <li>
-                        <a href="">我的</a>
+                        <router-link to="/user">我的</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/course">课程中心</router-link>
                     </li>
                 </ul>
             </div>
             <div class="login-box">
-                <router-link to="/login">登录</router-link>
-                <span style="margin: 0 5px;">|</span>
-                <router-link to="/register">注册</router-link>
+                <template v-if="isLoggedIn">
+                    <span style="margin-right: 10px;">欢迎您！{{ username }}</span>
+                    <el-button type="primary" @click="logout">退出</el-button>
+                </template>
+                <template v-else>
+                    <router-link to="/login">登录</router-link>
+                    <span style="margin: 0 5px;">|</span>
+                    <router-link to="/register">注册</router-link>
+                </template>
             </div>
         </div>
     </nav>
@@ -44,7 +38,16 @@
 
 
 <script setup>
-import { ArrowDown } from '@element-plus/icons-vue';
+import { computed } from 'vue';
+import { useUserStore } from '@/stores/user';
+
+const userStore = useUserStore();
+const isLoggedIn = computed(() => userStore.isLoggedIn);
+const username = computed(() => userStore.username);
+
+const logout = () => {
+    userStore.logout();
+};
 </script>
 
 <style scoped>

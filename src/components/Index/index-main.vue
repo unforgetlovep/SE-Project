@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import Header from '@/components/Index/head-nav.vue';
+import Header from '@/components/Index/index-header.vue';
 import RecommendList from '@/components/Index/nav-carousel.vue';
 import Content from '@/components/Index/main-content.vue';
 import Footer from '@/components/Index/index-footer.vue';

@@ -19,3 +19,7 @@ export const registerUser = (userData) => {
 export const loginUser = (userData) => {
     return apiClient.post('/login', userData);
 };
+
+export const editUserInfo = (userData) => {
+    return apiClient.post('/user', userData);
+}
