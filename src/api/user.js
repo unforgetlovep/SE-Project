@@ -20,6 +20,6 @@ export const loginUser = (userData) => {
     return apiClient.post('/login', userData);
 };
 
-export const editUserInfo = (userData) => {
-    return apiClient.post('/user', userData);
+export const updateUserInfo = (userData) => {
+    return apiClient.post('/user/update', userData);
 }

@@ -5,7 +5,10 @@ export const useUserStore = defineStore('user', {
         isLoggedIn: false,
         username: '',
         userRole: '',
-        userEmail: ''
+        userEmail: '',
+        userPhone: '',
+        userAddress: '',
+        userBio: ''
     }),
     actions: {
         login(user) {
@@ -13,6 +16,9 @@ export const useUserStore = defineStore('user', {
             this.username = user.username;
             this.userRole = user.role;
             this.userEmail = user.email;
+            this.userPhone = user.phone;
+            this.userAddress = user.address;
+            this.userBio = user.bio;
         },
         logout() {
             this.isLoggedIn = false;

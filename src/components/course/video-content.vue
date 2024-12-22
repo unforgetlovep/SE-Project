@@ -33,9 +33,11 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
 import { ElMessage } from "element-plus";
 import { courseInfo } from "@/api/video";
 
+const route = useRoute();
 const course = ref(null); // 课程数据
 const currentVideo = ref({}); // 当前视频数据
 const expandedChapters = ref([]); // 展开的章节 ID 列表
@@ -53,7 +55,8 @@ const playVideo = (video) => {
 // 获取课程数据
 const fetchCourseData = async () => {
     try {
-        const courseId = "CS_GO_001"; // 示例 courseId
+        const courseId = "course_" + route.params.courseId;
+        console.log("获取课程数据...",courseId);
         const response = await courseInfo(courseId);
         course.value = response.data.course; // 确保获取到正确的数据结构
 
@@ -104,6 +107,7 @@ onMounted(() => {
 
 .directory-container {
     flex: 1;
+    min-width: 400px;
 }
 
 .directory-card {

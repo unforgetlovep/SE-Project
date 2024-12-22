@@ -4,8 +4,11 @@ import Register from '@/views/register-page.vue'
 import Login from '@/views/login-page.vue'
 import User from '@/views/user-page.vue'
 import Course from '@/views/course-page.vue'
+import CourseDetail from '@/views/course-detail.vue'
+import VideoPage from '@/views/video-page.vue'
 import { ElMessage } from 'element-plus'
-import { useUserStore } from '@/stores/user';
+import { useUserStore } from '@/stores/user'
+
 
 const routes = [
   {
@@ -34,6 +37,21 @@ const routes = [
     name:'course',
     component:Course,
     meta: { requiresAuth: true }
+  },
+  {
+    path:'/test',
+    name:'test',
+    component:()=>import('@/views/test-page.vue')
+  },
+  {
+    path:'/courses/:courseId',
+    name:'course-detail',
+    component:CourseDetail
+  },
+  {
+    path: '/courses/:courseId/videos',
+    name: 'video',
+    component: VideoPage
   }
 ]
 

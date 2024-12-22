@@ -1,7 +1,7 @@
 <template>
     <Header></Header>
     <div class="course-page">
-        <a href="" class="course-card" v-for="(course, index) in courses" :key="index">
+        <router-link :to="`/courses/${course.courseId}`" class="course-card" v-for="(course, index) in courses" :key="index">
             <el-card shadow="hover" :body-style="{padding:'0px'}" style="margin-bottom: 20px;">
                 <img :src="course.cover" :alt="course.title" class="course-image" />
                 <template #footer>
@@ -11,7 +11,7 @@
                     </div>
                 </template>
             </el-card>
-        </a>
+        </router-link>
     </div>
     <Footer></Footer>
 </template>
@@ -28,7 +28,7 @@ const courses = ref([]);
 const fetchCourses = async () => {
     try {
         const response = await getAllCourses();
-        console.log('获取课程成功:', response);
+        console.log('获取全部课程成功:', response);
         courses.value = response.data.courses;
     } catch (error) {
         console.error('获取课程失败:', error);
@@ -76,5 +76,11 @@ onMounted(() => {
 .course-price {
     font-size: 14px;
     color: #f56c6c;
+}
+
+Footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 </style>

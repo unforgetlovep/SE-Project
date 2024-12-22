@@ -71,7 +71,11 @@ const onSubmit = () => {
                     ElMessage.error('登录失败: ' + (error.response?.data?.message || '未知错误'));
                 });
         } else {
-            ElMessage.error('请修正表单中的错误');
+            ElMessage.error({
+                message: '账号或密码错误！请重试',
+                duration: 2000 // 设置2秒后自动关闭
+            });
+
             return false;
         }
     });
@@ -100,11 +104,11 @@ const onReset = () => {
 
 .captcha-input {
     margin-right: 10px;
-    width: 200px; 
+    width: 200px;
 }
 
 .captcha-image {
     cursor: pointer;
-    height: 40px; 
+    height: 40px;
 }
 </style>

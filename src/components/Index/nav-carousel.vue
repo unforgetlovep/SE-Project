@@ -2,17 +2,19 @@
     <div class="container">
         <!--左侧导航-->
         <div class="recommend-box">
-            <ul>
-                <li>计算机/大数据科学/计算机视觉</li>
-                <li>高等数学/线性代数/概率论</li>
-                <li>期末复习/考试技巧/重点难点</li>
-                <li>考证培训/职业规划/技能提升</li>
-                <li>考研冲刺/复习资料/模拟试题</li>
-                <li>编程入门/算法基础/项目实战</li>
-                <li>网络安全/信息安全/密码学</li>
-                <li>机器学习/深度学习/神经网络</li>
-                <li>数据结构/算法设计/编程实践</li>
-            </ul>
+            <router-link to="/course">
+                <ul>
+                    <li>计算机/大数据科学/计算机视觉</li>
+                    <li>高等数学/线性代数/概率论</li>
+                    <li>期末复习/考试技巧/重点难点</li>
+                    <li>考证培训/职业规划/技能提升</li>
+                    <li>考研冲刺/复习资料/模拟试题</li>
+                    <li>编程入门/算法基础/项目实战</li>
+                    <li>网络安全/信息安全/密码学</li>
+                    <li>机器学习/深度学习/神经网络</li>
+                    <li>数据结构/算法设计/编程实践</li>
+                </ul>
+            </router-link>
         </div>
         <!--轮播图-->
         <el-carousel height="360px">
@@ -25,21 +27,31 @@
             <p class="short-txt">您可在本网站免费学习</p>
             <el-avatar size="large" src='https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
                 class="avatar"></el-avatar>
-            <router-link to="/register">
-                <el-button type="success">登录或注册</el-button>
-            </router-link>
+            <div v-if="isLoggedIn" class="logged-in-message">
+                <el-button type="success" disabled>已登录</el-button>
+            </div>
+            <div v-else>
+                <router-link to="/register">
+                    <el-button type="success">登录或注册</el-button>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
 
 <script setup>
 import { ElCarousel, ElCarouselItem, ElAvatar } from 'element-plus';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useUserStore } from '@/stores/user'; // 导入 Pinia Store
+
 const images = ref([
     '/images/lunbo1.png',
     '/images/lunbo2.png',
     '/images/lunbo3.png',
-])
+]);
+
+const userStore = useUserStore();
+const isLoggedIn = computed(() => userStore.isLoggedIn); // 计算属性，判断用户是否已登录
 </script>
 
 <style scoped>
@@ -122,6 +134,13 @@ const images = ref([
     position: absolute;
     bottom: 50px;
     right: 0;
+    transform: translate(-50%, -50%);
+}
+
+.logged-in-message {
+    position: absolute;
+    bottom: 0;
+    right: 27px;
     transform: translate(-50%, -50%);
 }
 </style>
