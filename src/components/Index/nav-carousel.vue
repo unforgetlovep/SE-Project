@@ -25,7 +25,7 @@
         <!--个人信息-->
         <div class="person-box">
             <p class="short-txt">您可在本网站免费学习</p>
-            <el-avatar size="large" src='https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+            <el-avatar size="large" src='https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.jpg'
                 class="avatar"></el-avatar>
             <div v-if="isLoggedIn" class="logged-in-message">
                 <el-button type="success" disabled>已登录</el-button>
@@ -45,9 +45,9 @@ import { ref, computed } from 'vue';
 import { useUserStore } from '@/stores/user'; // 导入 Pinia Store
 
 const images = ref([
-    '/images/lunbo1.png',
-    '/images/lunbo2.png',
-    '/images/lunbo3.png',
+    '/images/lunbo1.jpg',
+    '/images/lunbo2.jpg',
+    '/images/lunbo3.jpg',
 ]);
 
 const userStore = useUserStore();

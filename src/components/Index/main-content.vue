@@ -43,42 +43,42 @@ const computerCourses = ref([
     {
         title: '操作系统',
         price: '免费',
-        image: '/course/image.png'
+        image: '/course/image.jpg'
     },
     {
         title: '计算机网络',
         price: '免费',
-        image: '/course/image1.png'
+        image: '/course/image1.jpg'
     },
     {
         title:'计算机组成原理',
         price: '免费',
-        image: '/course/image2.png'
+        image: '/course/image2.jpg'
     },
     {
         title: 'Python编程',
         price: '免费',
-        image: '/course/image3.png'
+        image: '/course/image3.jpg'
     },
     {
         title: '数据结构',
         price: '免费',
-        image: '/course/image4.png'
+        image: '/course/image4.jpg'
     },
     {
         title: 'C++编程',
         price: '免费',
-        image: '/course/image10.png'
+        image: '/course/image10.jpg'
     },
     {
         title: '编译原理',
         price: '免费',
-        image: '/course/image9.png'
+        image: '/course/image9.jpg'
     },
     {
         title: '神经网络',
         price: '免费',
-        image: '/course/image7.png'
+        image: '/course/image7.jpg'
     }
 ]);
 
@@ -86,22 +86,22 @@ const lifeCourses = ref([
     {
         title: 'Pr剪辑入门教学',
         price: '免费',
-        image: '/course/image5.png'
+        image: '/course/image5.jpg'
     },
     {
         title: '摄影入门教学',
         price: '免费',
-        image: '/course/image6.png'
+        image: '/course/image6.jpg'
     },
     {
         title: '中国哲学史',
         price: '免费',
-        image: '/course/image8.png'
+        image: '/course/image8.jpg'
     },
     {
         title: '金融经济学',
         price: '免费',
-        image: '/course/image11.png'
+        image: '/course/image11.jpg'
     }
 ]);
 </script>

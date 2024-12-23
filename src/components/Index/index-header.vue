@@ -3,7 +3,7 @@
         <!--头部导航-->
         <div class="container wrap">
             <div class="nav-logo">
-                <img src="https://jwxt.sztu.edu.cn/jsxsd/assets/images/logo.png" alt="">
+                <img src="/bg-pic/logo.jpg" alt="">
             </div>
             <div class="head-nav ">
                 <ul class="container">
