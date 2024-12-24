@@ -6,12 +6,12 @@ import OSS from 'ali-oss';
 
 // 阿里云 OSS 配置
 const client = new OSS({
-    region: 'oss-ap-southeast-1', // 替换为你的阿里云 OSS 区域
+    region: 'xx', // 替换为你的阿里云 OSS 区域
     secure: true, // 使用 HTTPS
     authorizationV4: true,
-    accessKeyId: 'LTAI5tLrnEbu3wViWTKnCXVx', // 替换为你的阿里云 OSS AccessKeyId
-    accessKeySecret: 'x8FaAqrqdI8k44dMFkbGgfqBcjRQl7', // 替换为你的阿里云 OSS AccessKeySecret
-    bucket: 'store-video-zhy' // 替换为你的阿里云 OSS Bucket 名称
+    accessKeyId: 'xxx', // 替换为你的阿里云 OSS AccessKeyId
+    accessKeySecret: 'xxx', // 替换为你的阿里云 OSS AccessKeySecret
+    bucket: 'xx' // 替换为你的阿里云 OSS Bucket 名称
 });
 
 // 通用文件上传函数
